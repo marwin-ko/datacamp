@@ -2,6 +2,11 @@
 # S3
 #
 
+# AWS Permissions
+# - IAM (resource level)
+# - Bucket Policy (bucket level)
+# - ACL (object level)
+# - Presigned URL (temporary object level)
 
 # s3 client connection
 s3 = boto3.client('s3', region_name='us-east-1', aws_access_key_id=AWS_KEY_ID, aws_secret_access_key=AWS_SECRET)
