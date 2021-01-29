@@ -39,3 +39,7 @@ response = rekog.detect_labels(
              }
             }
 )
+
+
+
+
