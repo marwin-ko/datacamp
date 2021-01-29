@@ -7,11 +7,11 @@ aws_secret_access_key=AWS_SECRET)
 
 response = translate.translate_text(
 Text = 'Hello, how are you doing?',
-SourceLanguage = 'auto', # this is using AWS resource "comprehend"
+SourceLanguageCode = 'auto', # this is using AWS resource "comprehend"
 TargetLanguageCode = 'es')
 
 
-# Comprehend (language type detection and sentiment)
+# Comprehend (NLP)
 comprehend = boto3.client('comprehend',
 region_name = '',
 aws_access_key_id = AWS KEY_ID,
