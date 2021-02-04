@@ -2,6 +2,11 @@
 
 ## Terms
 - Directed Acyclic Graph (DAG): has a sect of nodes, directed edges, and no cycles.
+- Application Programmable Interface (API): 
+- Online Transaction Process (OLTP): row oriented 
+- Online Analytical Process (OLTP): column oriented, stored in data warehouse
+- Extract Transform Load (ETL): 
+
 
 ## Parallel Computation Frameworks
 - Spark
