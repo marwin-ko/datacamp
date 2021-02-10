@@ -3,3 +3,11 @@ agg_df = df.groupby('id').mean('numeric_col')
 combined_df = df.join(agg_df, df.id == agg_df.id)
 print(combined_df.show())
 
+#
+# parquet
+#
+# Write the pandas DataFrame to parquet
+df.to_parquet('data.parquet')
+
+# Write the PySpark DataFrame to parquet
+df.write.parquet('data.parquet')
