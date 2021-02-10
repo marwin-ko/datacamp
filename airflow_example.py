@@ -1,6 +1,6 @@
-#
-# Create the DAG object
-#
+from airflow.models import DAG
+from airflow.operators.python_operator import PythonOperator
+
 dag = DAG(dag_id="car_factory",
           default_args={"owner": "airflow",
           "start_date": airflow.utils.dates.days_ago(2)},
