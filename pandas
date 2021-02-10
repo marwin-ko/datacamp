@@ -1,0 +1,5 @@
+# agg + join back to original table
+agg_df = df.groupby('id').mean('numeric_col')
+combined_df = df.join(agg_df, df.id == agg_df.id)
+print(combined_df.show())
+
