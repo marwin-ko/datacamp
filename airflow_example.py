@@ -7,6 +7,14 @@ dag = DAG(dag_id="car_factory",
           schedule_interval="0 * * * *"  # every 0 min on the hour, see https://crontab.guru
           )
 
+# cron
+# .------------------------- minute (0 - 59)
+# | .----------------------- hour(0 - 23)
+# | | .--------------------- day of the month (1 - 31)
+# | | | .------------------- month            (1 - 12)
+# | | | | .----------------- day of the week  (0 - 6)
+# * * * * * <command># Example0 * * * * # Every hour at the 0th minute
+
 # Task definitions
 assemble_frame = BashOperator(task_id="assemble_frame", bash_command='echo "Assembling frame"', dag=dag)
 place_tires = BashOperator(task_id="place_tires", bash_command='echo "Placing tires"', dag=dag)
