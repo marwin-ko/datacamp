@@ -1,5 +1,5 @@
 from airflow.models import DAG
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.bash_operator import BashOperator
 
 dag = DAG(dag_id="car_factory",
           default_args={"owner": "airflow",
@@ -17,3 +17,24 @@ apply_paint = BashOperator(task_id="apply_paint", bash_command='echo "Applying p
 assemble_frame.set_downstream(place_tires)
 assemble_frame.set_downstream(assemble_body)
 assemble_body.set_downstream(apply_paint)
+
+
+
+# ex2
+
+from airflow.operators.python_operator import PythonOperator
+
+# Define the ETL function
+def etl():
+    film_df = extract_film_to_pandas()
+    film_df = transform_rental_rate(film_df)
+    return load_dataframe_to_film(film_df)
+
+# Define the ETL task using PythonOperator
+etl_task = PythonOperator(task_id='etl_film',
+                          python_callable=etl,
+                          dag=dag)
+
+# Set the upstream to wait_for_table and sample run etl()
+etl_task.set_upstream(wait_for_table)
+etl()
