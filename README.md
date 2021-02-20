@@ -24,6 +24,14 @@
 - Nextflow (for scientific workflows)
 
 
+## Other Learning Objectives
+- Git
+  - how to resolve merge conflicts
+  - review fundamentals
+- Scheduling
+  - cron jobs
+
+
 
 
 
