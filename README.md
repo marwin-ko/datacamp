@@ -5,7 +5,10 @@
 - Application Programmable Interface (API): 
 - Online Transaction Process (OLTP): row oriented 
 - Online Analytical Process (OLTP): column oriented, stored in data warehouse
-- Extract Transform Load (ETL): 
+- Extract Transform Load (ETL)
+  - Extract: get data from 1+ sources
+  - Transform: perform transforms using parallel computing
+  - Load: load data into target database
 
 
 ## Parallel Computation Frameworks
