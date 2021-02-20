@@ -46,3 +46,16 @@ etl_task = PythonOperator(task_id='etl_film',
 # Set the upstream to wait_for_table and sample run etl()
 etl_task.set_upstream(wait_for_table)
 etl()
+
+
+
+# IF ETL had input arguments
+task_recommendations = PythonOperator(
+    task_id="recommendations_task",
+    python_callable=etl,
+    op_kwargs={"db_engines": db_engines},
+)
+
+
+
+
