@@ -11,3 +11,11 @@ df.to_parquet('data.parquet')
 
 # Write the PySpark DataFrame to parquet
 df.write.parquet('data.parquet')
+
+
+# 
+# Aggregation Examples
+#
+
+# ex1 - take stratified mean and order
+df_agg = df.groupby('col1').col2.mean().sort_values().reset_index()
