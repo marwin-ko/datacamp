@@ -1,3 +1,5 @@
+# https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html
+
 def function(arg1, arg2=42):
   """
   Description of what the function does.
