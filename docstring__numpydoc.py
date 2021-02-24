@@ -17,3 +17,16 @@ def function(arg1, arg2=42):
     Replace "Returns" with "Yields" if this function is a generator.
   """
   return arg1 + arg2
+
+
+
+#
+# Retrieving docstrings
+#
+
+# EXAMPLE 1
+print(function.__doc__)
+
+# EXAMPLE 2
+import inspect
+print(inspect.getdoc(the_answer))
