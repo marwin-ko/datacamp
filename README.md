@@ -38,6 +38,7 @@
 # Functional Programming
 - DRY (don't repeat yourself)
 - Do one thing
+- Pass by assignment! (google for formal definition)
 
 
 
