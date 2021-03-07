@@ -39,6 +39,7 @@
 - DRY (don't repeat yourself)
 - Do one thing
 - Pass by assignment! (google for formal definition)
-
+- Mutable default arguments are dangerous
+  - If needed, assign to None then assign empty mutable argument.
 
 
