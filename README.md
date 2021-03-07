@@ -35,7 +35,9 @@
   - cron jobs
 
 
-
+# Functional Programming
+- DRY (don't repeat yourself)
+- Do one thing
 
 
 
