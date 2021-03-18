@@ -35,3 +35,16 @@ def my_context():
   yield
   # Add teardown code
 
+  
+# example 2
+@contextlib.contextmanager
+def database(url):
+  db = postgres.connect(url)
+  yield db
+  db.disconnect()
+url = 'http://datacamp.com/data'
+with database(url) as my_db:
+  course_list = my_db.execute(
+    'SELECT *
+    FROM courses'
+  )
