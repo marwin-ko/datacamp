@@ -28,6 +28,7 @@ with open('testfile.txt') as file:
 # 4. (optional) add teardown code
 # 5. Add the '@contextlib.contextmanager' decorator
 
+# technically a generator that yields a single value
 @contextlib.contextmanager
 def my_context():
   # Add set up code
