@@ -9,13 +9,18 @@
 # remove the contet    clean up and remove tables 
 
 
+# use cases
+# open close DB
+# change dir, do stuff, then change dir back
+# open two files simulateously (nested context text mangagers)
+
 # format
 with <context-manager>(<args>) as <variable-name>:
   # run code
   # this code is running "inside the context"
 
 
-# example 1
+# example 1 
 with open('testfile.txt') as file:
   text = file.read()
 
@@ -36,7 +41,7 @@ def my_context():
   # Add teardown code
 
   
-# example 2
+# example 2 - database
 @contextlib.contextmanager
 def database(url):
   db = postgres.connect(url)
@@ -48,3 +53,26 @@ with database(url) as my_db:
     'SELECT *
     FROM courses'
   )
+
+  
+# 
+# Advanced examples
+# 
+
+# example 3 - context manager with error handling
+def in_dir(directory):
+  """
+  Change current working directory to `directory`,
+  """
+  current_dir = os.getcwd()
+  os.chdir(directory)
+  
+  # Add code that lets you handle errors
+  try:
+    yield
+  # Ensure the directory is reset,
+  # whether there was an error or not
+  finally:
+    os.chdir(current_dir)
+    
+    
