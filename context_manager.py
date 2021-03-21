@@ -76,3 +76,12 @@ def in_dir(directory):
     os.chdir(current_dir)
     
     
+# example 4 - open two "sources" with nested context manager
+with stock('NVDA') as nvda:
+  # Open "NVDA.txt" for writing as f_out
+  with open('NVDA.txt', 'w') as f_out:
+    for _ in range(10):
+      value = nvda.price()
+      print('Logging ${:.2f} for NVDA'.format(value))
+      f_out.write('{:.2f}\n'.format(value))
+
