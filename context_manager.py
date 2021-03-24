@@ -41,7 +41,7 @@ def my_context():
   # Add teardown code
 
   
-# example 2 - database
+# example 2 - database conn
 @contextlib.contextmanager
 def database(url):
   db = postgres.connect(url)
@@ -55,11 +55,25 @@ with database(url) as my_db:
   )
 
   
+# example 3 - timer
+@contextlib.contextmanager
+def timer():
+  start = time.time()
+  # Send control back to the context block
+  yield
+  end = time.time()
+  print('Elapsed: {:.2f}s'.format(end - start))
+
+with timer():
+  print('This should take approximately 0.25 seconds')
+  time.sleep(0.25)
+  
+  
 # 
 # Advanced examples
 # 
 
-# example 3 - context manager with error handling
+# example 4 - context manager with error handling
 def in_dir(directory):
   """
   Change current working directory to `directory`,
@@ -76,7 +90,7 @@ def in_dir(directory):
     os.chdir(current_dir)
     
     
-# example 4 - open two "sources" with nested context manager
+# example 5 - open two "sources" with nested context manager
 with stock('NVDA') as nvda:
   # Open "NVDA.txt" for writing as f_out
   with open('NVDA.txt', 'w') as f_out:
