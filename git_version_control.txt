@@ -1,0 +1,36 @@
+# What does git do?
+# keep track of changes to files
+# notice conflicts between changes made by different users
+# synchronize files between different computers
+
+# What is a repo?
+# Repository is a combination of two things: files/directories and extra info that git records (.git) about project's history
+# .git is located in the root directory of the repo
+# you should never edit or delete anything in .git
+
+# see what's staged or committed
+git status 
+
+# see differences
+# @@ tells where changes are being made
+# pairs of numbers are "start line" and "number of lines"
+git diff # see all diffs
+git diff filename # see diff on file
+git diff directory # see diff on directory
+
+
+#
+# Save (add/commit/push)
+#
+
+# stage 
+git add filename
+
+# compare the state of your file with those in staging
+git diff -r HEAD 
+# -r flag means "compare to a particular revision" 
+# HEAD is shortcut meaning "the most recent commit"
+git diff -r HEAD path/file
+# restrict the results to a single file or directory
+
+
