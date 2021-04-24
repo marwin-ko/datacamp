@@ -1,0 +1,8 @@
+# edit or create (if not exists)
+nano filename.txt
+
+ctrl-K: delete a line
+ctrl-U: un-delete a line
+ctrl-O: save the file
+crtl-X: exit the editor
+
