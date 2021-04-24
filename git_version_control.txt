@@ -34,3 +34,14 @@ git diff -r HEAD path/file
 # restrict the results to a single file or directory
 
 
+#
+# commit
+#
+# use git commit to save changes in staging area
+# it saves everything that is in the staging area as one unit
+# when you want to undo changes to project, you undo all of a commit or none of it.
+
+git commit -m 'message'
+# if you need to change original commit message
+git commit --amnd -m 'new message'
+
