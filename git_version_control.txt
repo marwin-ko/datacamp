@@ -73,11 +73,20 @@ git log path
 #
 # view specific commit
 #
+# shows changes made in a particular commit
 # 1st part same as log entry from git log
 # 2nd part shows changes from git diff
 git show <first few characters of commit hash>
 git show HEAD
 git show HEAD~1
+
+
+#
+# how to view what changed between two commits
+#
+# show differences between 2 hashes
+git diff abc123..def456
+git diff HEAD~1..HEAD~2
 
 
 #
@@ -90,5 +99,17 @@ git annotate <file>
 # 3. time of commit
 # 4. line number
 # 5. contents of the line
+
+
+#
+# using .gitignore
+#
+
+# EXAMPLE: if inside git ignore looks like this..
+build
+*.pyc
+# Git will ignore any file or directory called "build"
+# if "build" is a directory, then everything in that directory is ignored
+# Git will ignore any files with .pyc extension
 
 
