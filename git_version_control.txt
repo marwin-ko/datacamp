@@ -47,8 +47,10 @@ git commit
 # commit with short message
 git commit -m 'message'
 
+
 # if you need to change original commit message
 git commit --amnd -m 'new message'
+
 
 #
 # git log
@@ -61,3 +63,12 @@ git log
 
 # view log of specific file or directory
 git log path
+
+
+#
+# view specific commit
+#
+# 1st part same as log entry from git log
+# 2nd part shows changes from git diff
+git show <first few characters of commit hash>
+
