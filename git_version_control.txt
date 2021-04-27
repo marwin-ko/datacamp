@@ -33,6 +33,11 @@ git diff -r HEAD
 git diff -r HEAD path/file
 # restrict the results to a single file or directory
 
+git diff -r HEAD~1 
+# HEAD~1 refers to (1) commit before most recent
+# HEAD~2 refers to 2 commits before most recent
+
+
 
 #
 # git commit
@@ -71,4 +76,19 @@ git log path
 # 1st part same as log entry from git log
 # 2nd part shows changes from git diff
 git show <first few characters of commit hash>
+git show HEAD
+git show HEAD~1
+
+
+#
+# git annotate
+#
+git annotate <file>
+# each line contains 5 elements
+# 1. first 8 digits of hash
+# 2. author
+# 3. time of commit
+# 4. line number
+# 5. contents of the line
+
 
